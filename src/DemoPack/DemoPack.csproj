@@ -12,18 +12,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Grpc.Tools" Version="2.54.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
-
 
   <!-- 打包参数 -->
   <PropertyGroup>
     <PackageId>Hello.$(AssemblyName)</PackageId>
-    <Version>0.0.8</Version>
+    <Version>0.1.0</Version>
     <PackageTags>gRpc</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <Description>
@@ -36,5 +29,16 @@
   <ItemGroup>
     <None Include="./Protos/*.proto" Pack="true" />
     <None Include="README.md" Pack="true" PackagePath="/" />
+  </ItemGroup>
+
+ <!-- nuget引用 -->
+  <ItemGroup>
+    <PackageReference Include="Grpc.Tools" Version="2.54.0">
+      <!-- 将使用这些资产，但它们不会流入上级项目 -->
+      <!-- <PrivateAssets>all</PrivateAssets> -->
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <!-- 测试包依赖最低版本 -->
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 </Project>
