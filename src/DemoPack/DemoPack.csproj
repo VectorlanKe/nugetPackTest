@@ -6,12 +6,6 @@
     <!-- 关闭全局using -->
     <ImplicitUsings>disable</ImplicitUsings>
   </PropertyGroup>
-  <ItemGroup>
-    <Folder Include="Protos\" />
-    <None Update=".\Protos\default.proto">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
 
   <!-- 打包参数 -->
   <PropertyGroup>
@@ -40,5 +34,10 @@
     </PackageReference>
     <!-- 测试包依赖最低版本 -->
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update=".\Protos\default.proto">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
