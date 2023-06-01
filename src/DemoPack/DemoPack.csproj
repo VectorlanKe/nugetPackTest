@@ -27,7 +27,7 @@
 
  <!-- nuget引用 -->
   <ItemGroup>
-    <PackageReference Include="Grpc.Tools" Version="2.54.0">
+    <PackageReference Include="Grpc.Tools" Version="2.54.0" PrivateAssets="None" >
       <!-- 将使用这些资产，但它们不会流入上级项目 -->
       <!-- <PrivateAssets>all</PrivateAssets> -->
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
